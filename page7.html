@@ -19,6 +19,13 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+ form {
+            background-color: #9ca0a3; /* Light blue */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(14, 13, 13, 0.1);
+        }
+
         }
     </style>
 </head>
@@ -45,6 +52,102 @@
         </div>
     </nav>
     
+ <div class="container mt-5">
+        <h1 class="text-center">Rate Portfolios</h1>
+        <h3 class="text-center">Please rate the following portfolios from 1 to 5</h3>
+        <form id="rateForm" class="mt-4">
+            <div class="mb-3">
+                <label for="portfolio1" class="form-label">Victor Buenvenida</label>
+                <select class="form-select" id="portfolio1">
+                    <option value="0">None</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+  <br>              
+            </div>
+            <div class="mb-3">
+                <label for="portfolio2" class="form-label">Cade Chua</label>
+                <select class="form-select" id="portfolio2">
+                    <option value="0">None</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+   <br>             
+            </div>
+            <div class="mb-3">
+                <label for="portfolio3" class="form-label">Radhika Evangelio</label>
+                <select class="form-select" id="portfolio3">
+                    <option value="0">None</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+  <br>              
+            </div>
+            <div class="mb-3">
+                <label for="portfolio4" class="form-label">Enzo battung</label>
+                <select class="form-select" id="portfolio4">
+                    <option value="0">None</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+  <br>
+            </div>
+            <div class="mb-3">
+                <label for="portfolio5" class="form-label">Steph De Guzman</label>
+                <select class="form-select" id="portfolio5">
+                    <option value="0">None</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+<br>
+                <div class="mb-3">
+                    <label for="comments" class="form-label">Comments</label>
+                    <textarea class="form-control" id="comments" rows="4" placeholder="Leave your comments here"></textarea>
+                </div>
+
+            </div>
+            <button type="button" class="btn btn-primary w-100" onclick="calculateAverage()">Submit</button>
+        </form>
+        <div class="mt-4">
+            <h3 id="averageResult" class="text-center"></h3>
+        </div>
+    </div>
+
+
+
+    <script>
+        function calculateAverage() {
+         
+            const portfolio1 = parseInt(document.getElementById("portfolio1").value);
+            const portfolio2 = parseInt(document.getElementById("portfolio2").value);
+            const portfolio3 = parseInt(document.getElementById("portfolio3").value);
+            const portfolio4 = parseInt(document.getElementById("portfolio4").value);
+            const portfolio5 = parseInt(document.getElementById("portfolio5").value);
+
+      
+            const average = (portfolio1 + portfolio2 + portfolio3 + portfolio4 + portfolio5) / 5;
+
+         
+            document.getElementById("averageResult").innerText = `The average rating is: ${average.toFixed(2)} + , Thank you for your feedback!`;
+        }
+    </script>
+
+
     <footer class="footer">
         Grade 9 Sapphire S.Y. 2425 | O.B. Montessori Las Piñas | Chua, Buenvenida, Battung, De Guzman, Evangelio
     </footer>
